@@ -1,0 +1,4 @@
+jack apple 34
+jack orange 21
+dany iphone 300
+dany mac 400

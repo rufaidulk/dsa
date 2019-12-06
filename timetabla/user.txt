@@ -1,0 +1,5 @@
+rufaid 9999 ADMIN234 Admin 1972
+jack 8888 234567 Seller 683
+jon 7777 765432 Customer 500
+dany 1111 234567 Seller 11768
+sam 2222 234567 Customer 700
