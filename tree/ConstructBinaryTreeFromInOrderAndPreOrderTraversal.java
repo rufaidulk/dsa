@@ -20,7 +20,7 @@ public class ConstructBinaryTreeFromInOrderAndPreOrderTraversal
         int[] inorder = {40, 20, 60, 50, 70, 10, 80, 100, 30};
         int[] preorder = {10, 20, 40, 50, 60, 70, 30, 80, 100};
         Node root = generateBinaryTree(inorder, preorder, 0, inorder.length-1);
-        levelOrderTraversal(root);
+        preorder(root);
     }
     
     static Node generateBinaryTree(int[] inorder, int[] preorder, int inorderStartIdx, int inorderEndIdx)
@@ -44,39 +44,11 @@ public class ConstructBinaryTreeFromInOrderAndPreOrderTraversal
         return root;
     }
     
-    static void inorder(Node root) {
-        if(root!=null) {
-            inorder(root.left);
+    static void preorder(Node root) {
+        if(root != null) {
             System.out.print(root.data+" ");
+            inorder(root.left);
             inorder(root.right);    
         }
     } 
-    
-    static void levelOrderTraversal(Node root)
-    {
-        if (root == null) {
-            return;
-        }
-        
-        Queue<Node> que = new ArrayDeque<>();
-        que.add(root);
-        
-        while (que.isEmpty() == false)
-        {
-            int size = que.size();
-            for (int i = 0; i < size; i++)
-            {
-                Node elem = que.poll();
-                System.out.print(elem.data + " ");
-                
-                if (elem.left != null) {
-                    que.add(elem.left);
-                }
-                if (elem.right != null) {
-                    que.add(elem.right);
-                }
-            }
-            System.out.println("");
-        }
-    }
 }
